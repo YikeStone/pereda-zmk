@@ -27,13 +27,9 @@
             RC(3,9) RC(3,8) RC(3,7)
         >;
     };
-
-    physical_layout0: physical_layout_0 {
-        compatible = "zmk,physical-layout";
-        display-name = "Default";
-        transform = <&default_transform>;
-    };
 };
+
+#include "pereda_layouts.dtsi"
 
 &uart0 {
     status = "disabled";
