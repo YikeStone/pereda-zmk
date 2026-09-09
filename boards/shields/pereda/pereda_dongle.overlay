@@ -1,0 +1,16 @@
+#include "pereda.dtsi"
+
+/ {
+    mock_kscan: mock_kscan_0 {
+        compatible = "zmk,kscan-mock";
+
+        columns = <0>;
+        rows = <0>;
+        events = <0>;
+    };
+
+    chosen {
+        zmk,kscan = &mock_kscan;
+        zmk,physical-layout = &physical_layout0;
+    };
+};

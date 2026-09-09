@@ -1,0 +1,95 @@
+if SHIELD_PEREDA_LEFT || SHIELD_PEREDA_RIGHT || SHIELD_PEREDA_DONGLE
+
+config ZMK_KEYBOARD_NAME
+    default "Pereda"
+
+endif
+
+if SHIELD_PEREDA_LEFT || SHIELD_PEREDA_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+config ZMK_SPLIT_BLE
+    default y
+
+config ZMK_SLEEP
+    default y
+
+config BT_SETTINGS
+    default y
+
+config SETTINGS
+    default y
+
+config ZMK_BLE
+    default y
+
+config UART_CONSOLE
+    default n
+
+endif
+
+
+if SHIELD_PEREDA_LEFT
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif
+
+
+if SHIELD_PEREDA_DONGLE
+
+config ZMK_USB
+    default y
+
+config ZMK_SPLIT
+    default y
+
+config ZMK_SPLIT_BLE
+    default y
+
+config ZMK_BLE
+    default y
+
+config BT
+    default y
+
+config BT_CENTRAL
+    default y
+
+config BT_OBSERVER
+    default y
+
+config FLASH
+    default y
+
+config FLASH_MAP
+    default y
+
+config NVS
+    default y
+
+config SETTINGS
+    default y
+
+config BT_SETTINGS
+    default y
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
+    default 2
+
+config BT_MAX_CONN
+    default 7
+
+config BT_MAX_PAIRED
+    default 7
+
+config UART_CONSOLE
+    default n
+
+endif

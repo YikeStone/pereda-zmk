@@ -18,31 +18,70 @@
 #     artifact-name: corne_left_with_studio
 #
 
+#---
+#include:
+#  - board: xiao_ble
+#    shield: pereda_left_central
+#    artifact-name: left-central
+#
+#  - board: xiao_ble
+#    shield: pereda_left
+#    artifact-name: left-peripheral
+#
+#  - board: xiao_ble
+#    shield: pereda_right
+#    artifact-name: right-peripheral
+#
+#  - board: nrf52840dongle_nrf52840
+#    shield: pereda_dongle
+#    artifact-name: central-dongle
+#
+#
+##settings_reset
+#  - board: xiao_ble
+#    shield: settings_reset
+#    cmake-args: -DCONFIG_ZMK_SETTINGS_RESET_ON_START=y
+#
+#  - board: nrf52840dongle_nrf52840
+#    shield: settings_reset
+#    cmake-args: -DCONFIG_ZMK_SETTINGS_RESET_ON_START=y -DCONFIG_FLASH=y -DCONFIG_FLASH_MAP=y -DCONFIG_FLASH_PAGE_LAYOUT=y -DCONFIG_NRFX_NVMC=y -DCONFIG_NVS=y -DCONFIG_SETTINGS=y -DCONFIG_SETTINGS_NVS=y -DCONFIG_REBOOT=y
+
 ---
 include:
-  - board: xiao_ble
-    shield: pereda_left_central
-    artifact-name: left-central
 
+  # Normal wireless split
   - board: xiao_ble
     shield: pereda_left
-    artifact-name: left-peripheral
+    artifact-name: pereda_left
 
   - board: xiao_ble
     shield: pereda_right
-    artifact-name: right-peripheral
+    artifact-name: pereda_right
 
+
+  # USB dongle
   - board: nrf52840dongle_nrf52840
     shield: pereda_dongle
-    artifact-name: central-dongle
+    artifact-name: pereda_dongle
+
+  # Left half as peripheral for dongle
+  - board: xiao_ble
+    shield: pereda_left
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+    artifact-name: pereda_left_dongle
+
+  # Right half as peripheral for dongle
+  - board: xiao_ble
+    shield: pereda_right
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+    artifact-name: pereda_right_dongle
 
 
-#settings_reset
+  # Settings reset
   - board: xiao_ble
     shield: settings_reset
-    cmake-args: -DCONFIG_ZMK_SETTINGS_RESET_ON_START=y
+    artifact-name: pereda_xiao_settings_reset
 
   - board: nrf52840dongle_nrf52840
     shield: settings_reset
-    cmake-args: -DCONFIG_ZMK_SETTINGS_RESET_ON_START=y -DCONFIG_FLASH=y -DCONFIG_FLASH_MAP=y -DCONFIG_FLASH_PAGE_LAYOUT=y -DCONFIG_NRFX_NVMC=y -DCONFIG_NVS=y -DCONFIG_SETTINGS=y -DCONFIG_SETTINGS_NVS=y -DCONFIG_REBOOT=y
-
+    artifact-name: pereda_dongle_settings_reset
