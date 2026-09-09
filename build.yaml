@@ -20,29 +20,32 @@
 
 ---
 include:
-  # Normal split: left central + right peripheral
   - board: xiao_ble
     shield: pereda_left
     artifact-name: left-central
-    cmake-args:
-      - -DCONFIG_ZMK_SPLIT=y
-      - -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y
+    snippet: pereda_left_central
+
+  - board: xiao_ble
+    shield: pereda_left
+    artifact-name: left-peripheral
+    snippet: pereda_left_peripheral
 
   - board: xiao_ble
     shield: pereda_right
     artifact-name: right-peripheral
-    cmake-args: 
-      - -DCONFIG_ZMK_SPLIT=y
-      - -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
-
-  # Dongle: left peripheral + right peripheral + USB central
-  - board: xiao_ble
-    shield: pereda_left
-    artifact-name: left-peripheral
-    cmake-args:
-      - -DCONFIG_ZMK_SPLIT=y
-      - -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+    snippet: pereda_right_peripheral
 
   - board: nrf52840dongle_nrf52840
     shield: pereda_dongle
     artifact-name: central-dongle
+
+
+#settings_reset
+  - board: xiao_ble
+    shield: settings_reset
+    cmake-args: -DCONFIG_ZMK_SETTINGS_RESET_ON_START=y
+
+  - board: nrf52840dongle_nrf52840
+    shield: settings_reset
+    cmake-args: -DCONFIG_ZMK_SETTINGS_RESET_ON_START=y -DCONFIG_FLASH=y -DCONFIG_FLASH_MAP=y -DCONFIG_FLASH_PAGE_LAYOUT=y -DCONFIG_NRFX_NVMC=y -DCONFIG_NVS=y -DCONFIG_SETTINGS=y -DCONFIG_SETTINGS_NVS=y -DCONFIG_REBOOT=y
+
