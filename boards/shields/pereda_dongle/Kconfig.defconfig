@@ -1,7 +1,7 @@
 if SHIELD_PEREDA_DONGLE
 
 config ZMK_PEREDA
-    default "pereda"
+    default "Pereda"
 
 config ZMK_SPLIT
     default y

@@ -17,40 +17,26 @@
 #     cmake-args: -DCONFIG_ZMK_STUDIO=y
 #     artifact-name: corne_left_with_studio
 #
+
 ---
 include:
-
-  # ==========================================
-  # CONFIGURATION A
-  # Normal wireless split
-  # Left = Central
-  # Right = Peripheral
-  # ==========================================
-
+  # Normal split: left central + right peripheral
   - board: xiao_ble
     shield: pereda_left
-    artifact-name: pereda_left_central
-    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y
+    artifact-name: left-central
+    cmake-args: -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y
 
   - board: xiao_ble
     shield: pereda_right
-    artifact-name: pereda_right_peripheral
-    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+    artifact-name: right-peripheral
+    cmake-args: -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
 
-
-  # ==========================================
-  # CONFIGURATION B
-  # Wireless dongle
-  # Left = Peripheral
-  # Right = Peripheral
-  # Dongle = Central
-  # ==========================================
-
+  # Dongle: left peripheral + right peripheral + USB central
   - board: xiao_ble
     shield: pereda_left
-    artifact-name: pereda_left_peripheral
-    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+    artifact-name: left-peripheral
+    cmake-args: -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
 
-  - board: xiao_ble
-    shield: pereda_dongle_central
-    artifact-name: pereda_dongle
+  - board: nrf52840dongle_nrf52840
+    shield: pereda_dongle
+    artifact-name: central-dongle
