@@ -48,3 +48,7 @@
         zmk,physical-layout = &physical_layout0;
     };
 };
+
+&uart0 {
+    status = "disabled";
+};
