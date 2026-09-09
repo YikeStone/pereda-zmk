@@ -1,6 +1,6 @@
 if SHIELD_PEREDA_LEFT
 
-config ZMK_PEREDA
+config ZMK_KEYBOARD_NAME
     default "Pereda"
 
 endif

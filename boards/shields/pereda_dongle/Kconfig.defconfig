@@ -1,6 +1,6 @@
 if SHIELD_PEREDA_DONGLE
 
-config ZMK_PEREDA
+config ZMK_KEYBOARD_NAME
     default "Pereda"
 
 config ZMK_SPLIT
