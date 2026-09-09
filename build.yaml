@@ -18,3 +18,39 @@
 #     artifact-name: corne_left_with_studio
 #
 ---
+include:
+
+  # ==========================================
+  # CONFIGURATION A
+  # Normal wireless split
+  # Left = Central
+  # Right = Peripheral
+  # ==========================================
+
+  - board: xiao_ble
+    shield: pereda_left
+    artifact-name: pereda_left_central
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y
+
+  - board: xiao_ble
+    shield: pereda_right
+    artifact-name: pereda_right_peripheral
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+
+
+  # ==========================================
+  # CONFIGURATION B
+  # Wireless dongle
+  # Left = Peripheral
+  # Right = Peripheral
+  # Dongle = Central
+  # ==========================================
+
+  - board: xiao_ble
+    shield: pereda_left
+    artifact-name: pereda_left_peripheral
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+
+  - board: xiao_ble
+    shield: pereda_dongle_central
+    artifact-name: pereda_dongle

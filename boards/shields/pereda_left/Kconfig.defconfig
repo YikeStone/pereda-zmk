@@ -1,0 +1,6 @@
+if SHIELD_PEREDA_LEFT
+
+config ZMK_PEREDA
+    default "Pereda"
+
+endif
