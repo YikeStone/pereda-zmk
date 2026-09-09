@@ -21,22 +21,16 @@
 ---
 include:
   - board: xiao_ble
-    shield: pereda_left
+    shield: pereda_left_central
     artifact-name: left-central
-    cmake-args:
-      - -DCONF_FILE=${ZMK_CONFIG}/pereda_left_central.conf
 
   - board: xiao_ble
     shield: pereda_left
     artifact-name: left-peripheral
-    cmake-args:
-      - -DCONF_FILE=${ZMK_CONFIG}/pereda_left_peripheral.conf
 
   - board: xiao_ble
     shield: pereda_right
     artifact-name: right-peripheral
-    cmake-args:
-      - -DCONF_FILE=${ZMK_CONFIG}/pereda_right_peripheral.conf
 
   - board: nrf52840dongle_nrf52840
     shield: pereda_dongle
