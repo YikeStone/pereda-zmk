@@ -1,4 +1,4 @@
-&kscan0 #include <dt-bindings/gpio/gpio.h>
+#include <dt-bindings/gpio/gpio.h>
 #include "pereda.dtsi"
 
 / {
