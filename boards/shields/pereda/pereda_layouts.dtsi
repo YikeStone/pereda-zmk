@@ -5,6 +5,8 @@
         compatible = "zmk,physical-layout";
         display-name = "Pereda";
 
+        transform = <&matrix_transform0>;
+
         keys  //                     w   h    x    y     rot    rx    ry
             = <&key_physical_attrs 100 100    7  147  (-900)    57   197>
             , <&key_physical_attrs 100 100  106  131  (-900)   156   181>
