@@ -81,13 +81,7 @@ include:
   - board: xiao_ble
     shield: settings_reset
     artifact-name: pereda_xiao_settings_reset
-    cmake-args:
-      - -DCONFIG_FLASH=y
-      - -DCONFIG_FLASH_MAP=y
-      - -DCONFIG_FLASH_PAGE_LAYOUT=y
-      - -DCONFIG_NVS=y
-      - -DCONFIG_SETTINGS=y
-      - -DCONFIG_SETTINGS_NVS=y
+    cmake-args: -DCONFIG_FLASH=y -DCONFIG_FLASH_MAP=y -DCONFIG_FLASH_PAGE_LAYOUT=y -DCONFIG_NVS=y -DCONFIG_SETTINGS=y -DCONFIG_SETTINGS_NVS=y -DCONFIG_ZMK_SETTINGS_RESET_ON_START=y
 
   - board: nrf52840dongle_nrf52840
     shield: settings_reset
