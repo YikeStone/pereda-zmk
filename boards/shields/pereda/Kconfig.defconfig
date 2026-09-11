@@ -31,9 +31,6 @@ config BT_SETTINGS
 config SETTINGS
     default y
 
-config SETTINGS_NVS
-    default y
-
 config NVS
     default y
 
