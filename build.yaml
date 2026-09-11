@@ -87,6 +87,7 @@ include:
       - -DCONFIG_FLASH_PAGE_LAYOUT=y
       - -DCONFIG_NVS=y
       - -DCONFIG_SETTINGS=y
+      - -DCONFIG_SETTINGS_NVS=y
 
   - board: nrf52840dongle_nrf52840
     shield: settings_reset
