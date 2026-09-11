@@ -51,7 +51,7 @@ config ZMK_SPLIT_ROLE_CENTRAL
 config ZMK_USB
     default y
 
-config USB_DEVICE_HID
+config ZMK_HID
     default y
 
 endif
