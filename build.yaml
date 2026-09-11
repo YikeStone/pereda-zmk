@@ -67,7 +67,7 @@ include:
   # Left half as peripheral for dongle
   - board: xiao_ble
     shield: pereda_left
-    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n -DCONFIG_ZMK_USB=n -DCONFIG_USB=n -DCONFIG_USB_DEVICE_STACK=n -DCONFIG_USB_DEVICE_HID
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n -DCONFIG_ZMK_USB=n 
     artifact-name: pereda_left_dongle
 
   # Right half as peripheral for dongle
