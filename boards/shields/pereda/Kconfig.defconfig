@@ -25,9 +25,6 @@ config ZMK_BLE
 config UART_CONSOLE
     default n
 
-config BT_SETTINGS
-    default y
-
 config SETTINGS
     default y
 
@@ -52,6 +49,9 @@ config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
 config ZMK_USB
+    default y
+
+config USB_DEVICE_HID
     default y
 
 endif
