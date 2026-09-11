@@ -19,14 +19,32 @@ config ZMK_SLEEP
 config BT_SETTINGS
     default y
 
-config SETTINGS
-    default y
-
 config ZMK_BLE
     default y
 
 config UART_CONSOLE
     default n
+
+config BT_SETTINGS
+    default y
+
+config SETTINGS
+    default y
+
+config SETTINGS_NVS
+    default y
+
+config NVS
+    default y
+
+config FLASH
+    default y
+
+config FLASH_PAGE_LAYOUT
+    default y
+
+config FLASH_MAP
+    default y
 
 endif
 
@@ -34,6 +52,9 @@ endif
 if SHIELD_PEREDA_LEFT
 
 config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+config ZMK_USB
     default y
 
 endif
