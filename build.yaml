@@ -86,3 +86,4 @@ include:
   - board: nrf52840dongle_nrf52840
     shield: settings_reset
     artifact-name: pereda_dongle_settings_reset
+    cmake-args: -DCONFIG_ZMK_SETTINGS_RESET_ON_START=y -DCONFIG_FLASH=y -DCONFIG_FLASH_MAP=y -DCONFIG_FLASH_PAGE_LAYOUT=y -DCONFIG_NRFX_NVMC=y -DCONFIG_NVS=y -DCONFIG_SETTINGS=y -DCONFIG_SETTINGS_NVS=y -DCONFIG_REBOOT=y
